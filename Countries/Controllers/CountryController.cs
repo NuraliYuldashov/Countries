@@ -15,7 +15,7 @@ public class CountryController(ICountryInterface countryInterface) : ControllerB
 
     [HttpGet("{lang}")]
     //[ResponseCache(Duration = 30)]  // response caching asosan frontenchilarda ishlatiladi
-    [OutputCache(Duration = 30)]  // Server tomonidan cach qilinadi
+    //[OutputCache(Duration = 30)]  // Server tomonidan cach qilinadi
     public async Task<IActionResult> Get(string lang)
     {
         Language language = Language.uz;
@@ -34,7 +34,7 @@ public class CountryController(ICountryInterface countryInterface) : ControllerB
 
     [HttpGet("{id}/{lang}")]
     //[ResponseCache(Duration = 30)]  // response caching asosan frontenchilarda ishlatiladi
-    [OutputCache(Duration = 30)]  // Server tomonidan cach qilinadi
+    //[OutputCache(Duration = 30)]  // Server tomonidan cach qilinadi
     public async Task<IActionResult> Get(int id, string lang)
     {
         Language language = Language.uz;
