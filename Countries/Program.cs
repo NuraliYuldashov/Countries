@@ -12,6 +12,12 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// response caching
+builder.Services.AddResponseCaching();
+
+// Add Output Caching
+builder.Services.AddOutputCache();
+
 builder.Services.AddDbContext<AppDbContext>(options => 
         options.UseSqlServer(builder.Configuration.GetConnectionString("LocalSqlServer")));
 
@@ -27,6 +33,13 @@ var app = builder.Build();
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
+
+
+// response caching
+//app.UseResponseCaching();
+
+// Add Output Caching
+app.UseOutputCache();
 
 app.MapControllers();
 
